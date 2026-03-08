@@ -96,8 +96,16 @@ Quatre listes 2D stockent l'état du jeu :
 **Rendu avec Matplotlib**
 Chaque case est un `plt.Rectangle`. Les chiffres et drapeaux sont affichés via `ax.text()`. La méthode `dessiner()` efface et redessine la grille complète à chaque interaction.
 
+**Gestion des événements**
+Les clics de souris sont interceptés via `mpl_connect('button_press_event', ...)`. La méthode `quand_on_clique()` traduit les coordonnées graphiques en index de matrice, puis dispatche vers `reveler()` ou la logique de drapeau.
+
 **Propagation en cascade (flood fill)**
 Quand une case révélée a 0 mine voisine, `reveler()` s'appelle récursivement sur ses 8 voisines. La vérification `if self.visible[y][x] == True` arrête la récursion naturellement.
+
+## Limites actuelles
+
+- **Premier clic non protégé** — les mines sont placées avant toute interaction, le premier clic peut donc tomber directement sur une mine.
+- **Grille fixe** — les dimensions et le nombre de mines sont définis par des constantes globales ; il n'y a pas de menu de sélection de difficulté intégré.
 
 ## Pour rejouer
 
