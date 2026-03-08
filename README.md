@@ -17,7 +17,7 @@ pip install matplotlib
 ## Lancement
 
 ```bash
-python minesweeper.py
+python demineur.py
 ```
 
 Une fenêtre graphique s'ouvre avec la grille de jeu.
@@ -40,7 +40,7 @@ Une fenêtre graphique s'ouvre avec la grille de jeu.
 
 ## Niveaux de difficulté
 
-En haut du fichier `minesweeper.py`, modifiez les constantes globales :
+En haut du fichier `demineur.py`, modifiez les constantes globales :
 
 ```python
 # Débutant
@@ -59,7 +59,7 @@ nb_mines_total = 99
 ## Structure du code
 
 ```
-minesweeper.py
+demineur.py
 │
 ├── Constantes globales
 │   ├── hauteur, largeur      — dimensions de la grille
@@ -104,7 +104,7 @@ Quand une case révélée a 0 mine voisine, `reveler()` s'appelle récursivement
 Fermez la fenêtre et relancez le script :
 
 ```bash
-python minesweeper.py
+python demineur.py
 ```
 
 ---
